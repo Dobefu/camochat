@@ -10,6 +10,13 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
+    vibrancy: 'fullscreen-ui',
+    backgroundMaterial: 'acrylic',
+    titleBarStyle: 'hiddenInset',
+    titleBarOverlay: {
+      height: 50,
+    },
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
