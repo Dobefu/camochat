@@ -23,6 +23,8 @@
     "@electron-forge/plugin-vite": "^7.6.1",
     "@electron/fuses": "^1.8.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "electron": "34.2.0",
@@ -44,7 +46,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "packageManager": "pnpm@10.1.0+sha512.c89847b0667ddab50396bbbd008a2a43cf3b581efd59cf5d9aa8923ea1fb4b8106c041d540d08acb095037594d73ebc51e1ec89ee40c88b30b8a66c0fae0ac1b",
   "pnpm": {
