@@ -13,9 +13,10 @@ const createWindow = () => {
     frame: false,
     vibrancy: 'fullscreen-ui',
     backgroundMaterial: 'acrylic',
-    titleBarStyle: 'hiddenInset',
-    titleBarOverlay: {
-      height: 50,
+    titleBarStyle: 'hidden',
+    trafficLightPosition: {
+      x: 16,
+      y: 16,
     },
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
