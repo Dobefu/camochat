@@ -1,14 +1,16 @@
 import { Message } from 'src/types/message'
 
-export default function Messages() {
-  const messages: Message[] = []
+export type Props = Readonly<{
+  messages: Message[]
+}>
 
+export default function Messages({ messages }: Props) {
   return (
     <div className="flex w-full flex-col gap-4">
       {messages.length ? (
         <>
           {messages.map((message) => (
-            <div key={message.message}>
+            <div key={message.timestamp}>
               <p className="font-semibold">{message.author}</p>
               <p>{message.message}</p>
             </div>
