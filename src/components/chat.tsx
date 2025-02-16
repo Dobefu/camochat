@@ -7,6 +7,7 @@ export default function Chat() {
 
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
+  const messagesContainerRef = useRef<HTMLDivElement>(null)
   const [isFocused, setIsFocused] = useState(false)
 
   const focusInput = useCallback(() => inputRef.current.focus(), [])
@@ -25,8 +26,14 @@ export default function Chat() {
 
       inputRef.current.value = ''
     },
-    [inputRef, messages],
+    [inputRef, messages, messagesContainerRef],
   )
+
+  useEffect(() => {
+    messagesContainerRef.current.scrollTop =
+      messagesContainerRef.current.scrollHeight -
+      messagesContainerRef.current.clientHeight
+  }, [messagesContainerRef, messages])
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -51,8 +58,11 @@ export default function Chat() {
   }, [inputRef, formRef])
 
   return (
-    <div className="flex flex-1 flex-col gap-4">
-      <div className="flex flex-1 flex-col items-center justify-end">
+    <div className="flex max-h-full flex-1 flex-col gap-4">
+      <div
+        className="flex flex-1 flex-col items-center justify-end overflow-auto"
+        ref={messagesContainerRef}
+      >
         <Messages messages={messages} />
       </div>
 
@@ -63,7 +73,7 @@ export default function Chat() {
         onSubmit={onFormSubmit}
         ref={formRef}
       >
-        <div className="w-full rounded-xl border border-stone-300 shadow-inner dark:border-stone-600">
+        <div className="w-full overflow-hidden rounded-xl border border-stone-300 shadow-inner dark:border-stone-600">
           <textarea
             autoFocus
             className="-mb-2 w-full resize-none rounded-t-xl p-2 outline-none"

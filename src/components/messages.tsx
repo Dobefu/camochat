@@ -6,7 +6,7 @@ export type Props = Readonly<{
 
 export default function Messages({ messages }: Props) {
   return (
-    <div className="flex w-full flex-col gap-4">
+    <div className="flex max-h-full w-full flex-col gap-4">
       {messages.length ? (
         <>
           {messages.map((message) => (

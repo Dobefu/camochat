@@ -8,7 +8,6 @@ const root = createRoot(document.body)
 root.render(
   <Chrome>
     <Layout>
-      <h2 className="text-2xl font-medium">CamoChat</h2>
       <Chat />
     </Layout>
   </Chrome>,

@@ -6,7 +6,7 @@ export type Props = Readonly<{
 
 export default function Chrome({ children }: Props) {
   return (
-    <div className="h-screen p-2 pt-12 [-webkit-app-region:drag]">
+    <div className="h-screen max-h-screen p-2 pt-12 [-webkit-app-region:drag]">
       {children}
     </div>
   )
