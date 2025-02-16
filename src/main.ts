@@ -10,6 +10,7 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    title: 'CamoChat',
     frame: false,
     vibrancy: 'fullscreen-ui',
     backgroundMaterial: 'acrylic',

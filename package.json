@@ -1,8 +1,8 @@
 {
   "name": "camochat",
-  "productName": "camochat",
+  "productName": "CamoChat",
   "version": "0.0.1",
-  "description": "My Electron application description",
+  "description": "A covert chat application to use to discuss with people during meetings",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
