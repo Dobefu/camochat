@@ -6,7 +6,7 @@ export type Props = Readonly<{
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="h-full overflow-auto rounded-md bg-stone-100 p-2 [-webkit-app-region:none] dark:bg-stone-900">
+    <div className="flex h-full flex-col gap-2 overflow-auto rounded-md bg-stone-100 p-2 [-webkit-app-region:none] dark:bg-stone-900">
       {children}
     </div>
   )
