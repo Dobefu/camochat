@@ -16,7 +16,7 @@ export default function Chat() {
         aria-selected={isFocused}
         className="relative rounded-xl aria-selected:outline-2"
       >
-        <div className="w-full rounded-xl border border-gray-300 shadow-inner">
+        <div className="w-full rounded-xl border border-stone-300 shadow-inner dark:border-stone-600">
           <textarea
             autoFocus
             className="-mb-2 w-full resize-none rounded-t-xl p-2 outline-none"
@@ -26,7 +26,11 @@ export default function Chat() {
           />
 
           <div className="flex justify-end p-2">
-            <input className="font-medium" value="Send" type="submit" />
+            <input
+              className="font-medium text-stone-600 dark:text-stone-300"
+              value="Send"
+              type="submit"
+            />
           </div>
         </div>
       </form>
