@@ -10,7 +10,7 @@ export default function Chat() {
   const onBlurInput = useCallback(() => setIsFocused(false), [])
 
   return (
-    <div className="flex flex-1 flex-col gap-8">
+    <div className="flex flex-1 flex-col gap-4">
       <div className="flex flex-1 flex-col items-center justify-end">
         <Messages />
       </div>
