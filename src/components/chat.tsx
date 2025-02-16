@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from 'react'
+import Messages from './messages'
 
 export default function Chat() {
   const inputRef = useRef<HTMLTextAreaElement>(null)
@@ -11,7 +12,7 @@ export default function Chat() {
   return (
     <div className="flex flex-1 flex-col gap-8">
       <div className="flex flex-1 flex-col items-center justify-end">
-        <div>MESSAGES</div>
+        <Messages />
       </div>
 
       <form
@@ -23,17 +24,17 @@ export default function Chat() {
           <textarea
             autoFocus
             className="-mb-2 w-full resize-none rounded-t-xl p-2 outline-none"
-            placeholder="Enter a message..."
-            onFocus={onFocusInput}
             onBlur={onBlurInput}
+            onFocus={onFocusInput}
+            placeholder="Enter a message..."
             ref={inputRef}
           />
 
           <div className="flex justify-end p-2">
             <input
               className="font-medium text-stone-600 dark:text-stone-300"
-              value="Send"
               type="submit"
+              value="Send"
             />
           </div>
         </div>

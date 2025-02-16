@@ -1,6 +1,14 @@
+import { includeIgnoreFile } from '@eslint/compat'
 import { FlatCompat } from '@eslint/eslintrc'
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
 import pluginReact from 'eslint-plugin-react'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import plugintypescriptEslint from 'typescript-eslint'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const gitignorePath = path.resolve(__dirname, '.gitignore')
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -10,9 +18,17 @@ const eslintConfig = [
   ...compat.config({
     extends: ['prettier'],
   }),
+  ...plugintypescriptEslint.configs.recommended,
+  includeIgnoreFile(gitignorePath),
   {
     ...pluginJsxA11y.flatConfigs.strict,
     ...pluginReact.configs.flat.recommended,
+    files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
+    settings: {
+      react: {
+        version: '19',
+      },
+    },
     rules: {
       'react/boolean-prop-naming': ['warn'],
       'react/forward-ref-uses-ref': ['warn'],
