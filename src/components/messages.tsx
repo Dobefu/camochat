@@ -11,8 +11,13 @@ export default function Messages({ messages }: Props) {
         <>
           {messages.map((message) => (
             <div key={message.timestamp}>
-              <p className="font-semibold">{message.author}</p>
-              <p>{message.message}</p>
+              <p className="font-semibold">
+                {message.author}{' '}
+                <span className="font-normal">
+                  {new Date(message.timestamp).toLocaleTimeString()}
+                </span>
+              </p>
+              <p className="whitespace-pre-line">{message.message}</p>
             </div>
           ))}
         </>
